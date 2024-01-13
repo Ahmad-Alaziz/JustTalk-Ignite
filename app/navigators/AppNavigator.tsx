@@ -36,6 +36,7 @@ import { colors } from "app/theme"
  */
 export type AppStackParamList = {
   Welcome: undefined
+  Speak: undefined
   Login: undefined
   Demo: NavigatorScreenParams<DemoTabParamList>
   // 🔥 Your screens go here
@@ -64,11 +65,11 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false, navigationBarColor: colors.background }}
-      initialRouteName={isAuthenticated ? "Welcome" : "Login"}
+      initialRouteName={isAuthenticated ? "Speak" : "Login"}
     >
       {isAuthenticated ? (
         <>
-          <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
+          <Stack.Screen name="Speak" component={Screens.SpeakScreen} />
 
           <Stack.Screen name="Demo" component={DemoNavigator} />
         </>

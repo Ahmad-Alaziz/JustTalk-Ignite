@@ -64,8 +64,8 @@ export const DemoText: Demo = {
 
       <DemoDivider />
 
-      <Text weight="normal">
-        normal - Magna incididunt dolor ut veniam veniam laboris aliqua velit ea incididunt.
+      <Text weight="regular">
+        regular - Magna incididunt dolor ut veniam veniam laboris aliqua velit ea incididunt.
       </Text>
 
       <DemoDivider />

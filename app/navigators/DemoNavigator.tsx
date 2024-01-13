@@ -39,7 +39,7 @@ export function DemoNavigator() {
         tabBarHideOnKeyboard: true,
         tabBarStyle: [$tabBar, { height: bottom + 70 }],
         tabBarActiveTintColor: colors.text,
-        tabBarInactiveTintColor: colors.text,
+        tabBarInactiveTintColor: colors.textDim,
         tabBarLabelStyle: $tabBarLabel,
         tabBarItemStyle: $tabBarItem,
       }}
@@ -50,7 +50,7 @@ export function DemoNavigator() {
         options={{
           tabBarLabel: translate("demoNavigator.componentsTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="components" color={focused ? colors.tint : undefined} size={30} />
+            <Icon icon="components" color={focused ? colors.tint : colors.textDim} size={30} />
           ),
         }}
       />
@@ -61,7 +61,7 @@ export function DemoNavigator() {
         options={{
           tabBarLabel: translate("demoNavigator.communityTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="community" color={focused ? colors.tint : undefined} size={30} />
+            <Icon icon="community" color={focused ? colors.tint : colors.textDim} size={30} />
           ),
         }}
       />
@@ -73,7 +73,7 @@ export function DemoNavigator() {
           tabBarAccessibilityLabel: translate("demoNavigator.podcastListTab"),
           tabBarLabel: translate("demoNavigator.podcastListTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="podcast" color={focused ? colors.tint : undefined} size={30} />
+            <Icon icon="podcast" color={focused ? colors.tint : colors.textDim} size={30} />
           ),
         }}
       />
@@ -84,7 +84,7 @@ export function DemoNavigator() {
         options={{
           tabBarLabel: translate("demoNavigator.debugTab"),
           tabBarIcon: ({ focused }) => (
-            <Icon icon="debug" color={focused ? colors.tint : undefined} size={30} />
+            <Icon icon="debug" color={focused ? colors.tint : colors.textDim} size={30} />
           ),
         }}
       />
@@ -102,8 +102,8 @@ const $tabBarItem: ViewStyle = {
 }
 
 const $tabBarLabel: TextStyle = {
-  fontSize: 12,
-  fontFamily: typography.primary.medium,
+  fontSize: 10,
+  fontFamily: typography.primary.light,
   lineHeight: 16,
   flex: 1,
 }

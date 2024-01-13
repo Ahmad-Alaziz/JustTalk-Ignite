@@ -11,18 +11,16 @@
     "splash": {
       "image": "./assets/images/splash-logo-all.png",
       "resizeMode": "contain",
-      "backgroundColor": "#191015"
+      "backgroundColor": "#141414"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "jsEngine": "hermes",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "android": {
       "icon": "./assets/images/app-icon-android-legacy.png",
-      "package": "com.alaziz.justtalk",
+      "package": "com.ahmadzik.justtalk",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
         "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
@@ -30,18 +28,22 @@
       "splash": {
         "image": "./assets/images/splash-logo-android-universal.png",
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
-      }
+        "backgroundColor": "#141414"
+      },
+      "permissions": ["android.permission.RECORD_AUDIO"]
     },
     "ios": {
       "icon": "./assets/images/app-icon-ios.png",
       "supportsTablet": true,
-      "bundleIdentifier": "com.alaziz.justtalk",
+      "bundleIdentifier": "com.ahmadzik.justtalk",
       "splash": {
         "image": "./assets/images/splash-logo-ios-mobile.png",
         "tabletImage": "./assets/images/splash-logo-ios-tablet.png",
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
+        "backgroundColor": "#141414"
+      },
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "This app uses speech recognition to convert your speech to text."
       }
     },
     "web": {
@@ -49,12 +51,13 @@
       "splash": {
         "image": "./assets/images/splash-logo-web.png",
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
+        "backgroundColor": "#141414"
       },
       "bundler": "metro"
     },
     "plugins": [
       "expo-localization",
+      "@react-native-voice/voice",
       [
         "expo-build-properties",
         {
@@ -67,10 +70,16 @@
         }
       ]
     ],
+    "extra": {
+      "eas": {
+        "projectId": "c704b2c9-4aec-45d9-8944-05a80e1dd67e"
+      }
+    },
     "experiments": {
       "tsconfigPaths": true
     }
   },
+
   "ignite": {
     "version": "9.0.2-alpha.1"
   }

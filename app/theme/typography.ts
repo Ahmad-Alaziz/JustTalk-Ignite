@@ -1,31 +1,36 @@
-// TODO: write documentation about fonts and typography along with guides on how to add custom fonts in own
-// markdown file and add links from here
-
 import { Platform } from "react-native"
-import {
-  SpaceGrotesk_300Light as spaceGroteskLight,
-  SpaceGrotesk_400Regular as spaceGroteskRegular,
-  SpaceGrotesk_500Medium as spaceGroteskMedium,
-  SpaceGrotesk_600SemiBold as spaceGroteskSemiBold,
-  SpaceGrotesk_700Bold as spaceGroteskBold,
-} from "@expo-google-fonts/space-grotesk"
+
+// Import custom Geist fonts
+
+// Add other font styles as needed
 
 export const customFontsToLoad = {
-  spaceGroteskLight,
-  spaceGroteskRegular,
-  spaceGroteskMedium,
-  spaceGroteskSemiBold,
-  spaceGroteskBold,
+  GeistBlack: require("../../assets/fonts/Geist/Geist-Black.otf"),
+  GeistBold: require("../../assets/fonts/Geist/Geist-Bold.otf"),
+  GeistLight: require("../../assets/fonts/Geist/Geist-Light.otf"),
+  GeistMedium: require("../../assets/fonts/Geist/Geist-Medium.otf"),
+  GeistRegular: require("../../assets/fonts/Geist/Geist-Regular.otf"),
+  GeistSemiBold: require("../../assets/fonts/Geist/Geist-SemiBold.otf"),
+  GeistThin: require("../../assets/fonts/Geist/Geist-Thin.otf"),
+  GeistUltraBlack: require("../../assets/fonts/Geist/Geist-UltraBlack.otf"),
+  GeistUltraLight: require("../../assets/fonts/Geist/Geist-UltraLight.otf"),
+  GeistMono: require("../../assets/fonts/Geist/GeistMono-Regular.otf"),
 }
 
 const fonts = {
-  spaceGrotesk: {
-    // Cross-platform Google font.
-    light: "spaceGroteskLight",
-    normal: "spaceGroteskRegular",
-    medium: "spaceGroteskMedium",
-    semiBold: "spaceGroteskSemiBold",
-    bold: "spaceGroteskBold",
+  geist: {
+    black: "GeistBlack",
+    bold: "GeistBold",
+    light: "GeistLight",
+    medium: "GeistMedium",
+    regular: "GeistRegular",
+    semiBold: "GeistSemiBold",
+    thin: "GeistThin",
+    ultraBlack: "GeistUltraBlack",
+    ultraLight: "GeistUltraLight",
+  },
+  monospace: {
+    normal: "GeistMono",
   },
   helveticaNeue: {
     // iOS only font.
@@ -34,20 +39,12 @@ const fonts = {
     normal: "Helvetica Neue",
     medium: "HelveticaNeue-Medium",
   },
-  courier: {
-    // iOS only font.
-    normal: "Courier",
-  },
   sansSerif: {
     // Android only font.
     thin: "sans-serif-thin",
     light: "sans-serif-light",
     normal: "sans-serif",
     medium: "sans-serif-medium",
-  },
-  monospace: {
-    // Android only font.
-    normal: "monospace",
   },
 }
 
@@ -59,13 +56,16 @@ export const typography = {
   /**
    * The primary font. Used in most places.
    */
-  primary: fonts.spaceGrotesk,
+  primary: fonts.geist,
   /**
-   * An alternate font used for perhaps titles and stuff.
+   * An alternate secondary font.
    */
-  secondary: Platform.select({ ios: fonts.helveticaNeue, android: fonts.sansSerif }),
+  secondary: Platform.select({
+    ios: fonts.helveticaNeue,
+    android: fonts.sansSerif,
+  }),
   /**
    * Lets get fancy with a monospace font!
    */
-  code: Platform.select({ ios: fonts.courier, android: fonts.monospace }),
+  code: fonts.monospace,
 }
